@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="com.ionexplus.titu.viewmodel.EditProfileViewModel" />
+
+    </data>
+
+<LinearLayout android:orientation="vertical"
+
+    android:background="@drawable/bg_bottom_sheet" android:layout_width="fill_parent" android:layout_height="500dp"
+    android:layout_marginBottom="15dp"
+    >
+    <RelativeLayout
+        android:id="@+id/lout_count"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:textSize="13dp"
+            android:textColor="@color/light_white"
+            android:gravity="center"
+            android:id="@+id/tv_comment_count"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="Choose Category" />
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:padding="8dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_close"
+            android:tint="@color/light_white"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lout_comment"
+        android:background="@color/colorPrimary"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:layout_below="@+id/lout_count">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="400dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:paddingTop="10dp"
+                android:visibility="visible"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:adapter="@{viewmodel.adapter}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+</LinearLayout></layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+    </data>
+
+<RelativeLayout  android:layout_width="fill_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/bg_bottom_sheet" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:backgroundTint="@color/transparent_black_80">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/beauty_layout_container">
+            <ImageView android:id="@+id/beauty_close_button" android:padding="18dp" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginBottom="2dp" android:src="@drawable/ic_close" android:tint="@color/white" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/beauty_layout_container" android:paddingBottom="50dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/beauty_level_layout" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="52dp">
+                <SeekBar android:id="@+id/beauty_seekbar" android:layout_width="fill_parent" android:layout_height="52dp" android:maxHeight="2dp" android:max="100" android:progress="0" android:secondaryProgress="0" android:minHeight="2dp" android:layout_marginStart="16dp" android:layout_marginEnd="123dp" />
+                <Button android:id="@+id/beauty_init_button" android:background="@drawable/init_btn_default" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginEnd="3dp" android:layout_alignParentEnd="true" />
+                <Button android:id="@+id/beauty_comparison_button" android:background="@drawable/comparison_btn_default" android:layout_width="52dp" android:layout_height="52dp" android:layout_toStartOf="@id/beauty_init_button" />
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/beauty_items_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/beauty_level_layout" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+</layout>

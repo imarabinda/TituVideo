@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<defaultsMap>
+    <entry>
+        <key>cache_expire</key>
+        <value>0</value>
+    </entry>
+    <entry>
+        <key>minimum_app_version</key>
+        <value>1.3.1</value>
+    </entry>
+    <entry>
+        <key>update_title</key>
+        <value>New Version Available</value>
+    </entry>
+    <entry>
+        <key>update_description</key>
+        <value>A new version has been launched, please update the app.</value>
+    </entry>
+
+    <entry>
+        <key>camera_api_level</key>
+        <value>1</value>
+    </entry>
+
+    <entry>
+        <key>maintenance_mode</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>maintenance_title</key>
+        <value>Short Maintenance</value>
+    </entry>
+    <entry>
+        <key>maintenance_description</key>
+        <value>Sorry for the inconvenience. We'll be right back soon.</value>
+    </entry>
+
+</defaultsMap>

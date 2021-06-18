@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "482281253532",
+    "project_id": "titu-dev",
+    "storage_bucket": "titu-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482281253532:android:5ad5cc9b529a864d38db59",
+        "android_client_info": {
+          "package_name": "com.ionexplus.titu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482281253532-hndq6cb9qh7a3ssb62gs165v4u4csm6t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionexplus.titu",
+            "certificate_hash": "b6e646def624a5f2e1316564183361dc6c18ba48"
+          }
+        },
+        {
+          "client_id": "482281253532-sb38emhof9469q3d4haoii18rep6bhkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6FR-NV_bAhHdrub-uEVDXi9K2HJqYaHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482281253532-sb38emhof9469q3d4haoii18rep6bhkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

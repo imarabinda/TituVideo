@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.ionexplus.titu.viewmodel.MusicChildViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            >
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:visibility='@{viewModel.isLoading ? View.VISIBLE: View.GONE}'
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/lout_nothing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.type == 1 ? (viewModel.noMusicList &amp;&amp; !viewModel.isLoading ?  View.VISIBLE : View.GONE) : (viewModel.noCategory &amp;&amp; !viewModel.isLoading ? View.VISIBLE : View.GONE)}">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bubble_single" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/popins_medium"
+                android:text="Oops !"
+                android:textColor="@color/light_white"
+                android:textSize="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/popins_medium"
+                android:text="Nothing to show..."
+                android:textColor="@color/color_text_light"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:adapter="@{viewModel.type == 1 ? viewModel.musicsListAdapter : viewModel.categoryAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_music_category" />
+
+    </RelativeLayout>
+
+</layout>

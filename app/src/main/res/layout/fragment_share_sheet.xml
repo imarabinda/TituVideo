@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="viewModel"
+            type="com.ionexplus.titu.viewmodel.ShareSheetViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_bottom_sheet"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".view.share.ShareSheetFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/popins_medium"
+            android:gravity="center"
+            android:text="Share This Video"
+            android:textColor="@color/light_white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility='@{!viewModel.video.getCanSave().equals("1") ? View.VISIBLE: View.GONE}'
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/btn_download"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_white_round"
+                            android:backgroundTint="@color/pink"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_download" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_white_round"
+                            android:backgroundTint="@color/insta"
+                            android:onClick="@{()->viewModel.setOnItemClick(1)}"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_instagram" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_white_round"
+                            android:backgroundTint="@color/blue"
+                            android:onClick="@{()->viewModel.setOnItemClick(2)}"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_facebook" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_white_round"
+                            android:backgroundTint="@color/green"
+                            android:onClick="@{()->viewModel.setOnItemClick(3)}"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_whatsapp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/btn_copy"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_white_round"
+                            android:backgroundTint="@color/colorTheme"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_copy" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_white_round"
+                            android:backgroundTint="@color/colorTheme"
+                            android:onClick="@{()->viewModel.setOnItemClick(4)}"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_menu" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/btn_report"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/popins_light"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
+                android:text="Report Post"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_light"
+                android:textSize="10sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/popins_light"
+                android:gravity="center"
+                android:text="By clicking this report button, you agree that\nyou are taking all the responsibilities of all the\nprocess that may be done by us or the content uploader."
+                android:textColor="@color/color_text_light"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:visibility="invisible"
+            android:id="@+id/watermark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            >
+
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bubble_single"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/icon"
+                android:gravity="clip_vertical"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popins_bold"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popins_bold"
+                    android:text='@{"@"+viewModel.video.userName}'
+                    android:hint="John Doe"
+                    android:layout_marginTop="-10dp"
+                    android:textColor="@color/white"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <!--        last start-->
+        <!--        <LinearLayout-->
+        <!--            android:gravity="center_horizontal"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:id="@+id/full_watermark"-->
+        <!--            android:visibility="invisible"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:background="@color/black"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            >-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/profile_img"-->
+        <!--                android:layout_width="150dp"-->
+        <!--                android:layout_height="150dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:background="@drawable/ic_searchuser_dp_bg"-->
+        <!--                android:scaleType="centerCrop"-->
+        <!--                android:src="@drawable/dummy_user"-->
+        <!--                app:profile_url="@{viewModel.video.userProfile}" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/user_FirstLastname"-->
+        <!--                android:layout_marginTop="15dp"-->
+        <!--                android:fontFamily="@font/popins_medium"-->
+        <!--                android:hint="Full Name"-->
+        <!--                android:text="@{viewModel.video.fullName}"-->
+        <!--                android:textColor="@color/light_white"-->
+        <!--                android:textSize="26sp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:visibility="@{TextUtils.isEmpty(viewModel.video.fullName) ? View.GONE : View.VISIBLE}" />-->
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:gravity="center"-->
+        <!--                android:orientation="horizontal"-->
+        <!--                tools:ignore="UseCompoundDrawables">-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/userName"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:fontFamily="@font/popins_medium"-->
+        <!--                    android:text='@{"@"+viewModel.video.userName}'-->
+        <!--                    android:textColor="@color/color_text_light"-->
+        <!--                    android:hint='\@username'-->
+        <!--                    android:textSize="13sp" />-->
+
+        <!--                <ImageView-->
+        <!--                    android:layout_width="14dp"-->
+        <!--                    android:layout_height="14dp"-->
+        <!--                    android:layout_marginStart="5dp"-->
+        <!--                    android:contentDescription="@string/image"-->
+        <!--                    android:src="@drawable/ic_user_verified"-->
+        <!--                    android:visibility="@{viewModel.video.verified ? View.VISIBLE : View.GONE}" />-->
+
+        <!--            </LinearLayout>-->
+
+        <!--            <TextView-->
+        <!--                android:layout_marginTop="@dimen/_80sdp"-->
+        <!--                android:id="@+id/tag_line"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:fontFamily="@font/popins_medium"-->
+        <!--                android:text='@{"Watch on "+@string/app_name}'-->
+        <!--                android:textColor="@color/pink"-->
+        <!--                android:hint='Watch on Titu Video App'-->
+
+        <!--                android:textSize="26sp" />-->
+
+        <!--            <ImageView-->
+        <!--                android:layout_width="290dp"-->
+        <!--                android:layout_height="80dp"-->
+        <!--                android:visibility="visible"-->
+        <!--                android:src="@drawable/logo_horizontal"-->
+        <!--                />-->
+
+        <!--        </LinearLayout>-->
+        <!--        lastend-->
+
+    </LinearLayout>
+</layout>

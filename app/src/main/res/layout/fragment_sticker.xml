@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+>
+    <data>
+    </data>
+
+<RelativeLayout  android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/bg_bottom_sheet" android:paddingBottom="50dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:backgroundTint="@color/transparent_black_80">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@+id/close_sticker_button" android:padding="18dp" android:layout_width="55dp" android:layout_height="55dp" android:src="@drawable/ic_close" android:tint="@color/white" />
+            <TextView android:id="@+id/clear_sticker_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clear" android:layout_centerVertical="true" android:fontFamily="@font/popins_medium" android:layout_marginEnd="15dp" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/sticker_recyclerview" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/sticker_category_recyclerview" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>
+</layout>
